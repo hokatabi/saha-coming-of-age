@@ -1,1 +1,3 @@
-# saha-coming-of-age
+# tipscript
+
+雑多なスクリプト置き場
