@@ -30,6 +30,7 @@ def lambda_handler(event, context):
         age_month = today.month - month
 
         if today.month < month:
+            age = age - 1
             age_month = 12 + age_month
 
         tweet = tweet + '今日で' + str(age) + '歳' + str(age_month) + 'ヶ月だよ⭐'
