@@ -15,9 +15,11 @@ def lambda_handler(event, context):
     month = config.month
     day = config.day
 
-    adult_coming_day = datetime.datetime(year+20, month, day)
     today = datetime.datetime.now()
-    distance = adult_coming_day - today
+    twenty_coming_day = datetime.datetime(year+20, month, day)
+    twenty_distance = twenty_coming_day - today
+    eighteen_coming_day = datetime.datetime(year+18, month, day)
+    eighteen_distance = eighteen_coming_day - today
 
     tweet = today.strftime('%Y年%m月%d日') + 'になりました。'
 
@@ -35,7 +37,8 @@ def lambda_handler(event, context):
 
         tweet = tweet + '今日で' + str(age) + '歳' + str(age_month) + 'ヶ月だよ⭐'
 
-    tweet = tweet + 'smhが成人するまであと' + str(distance.days) + '日です。'
+    tweet = tweet + '🔞クリアまであと' + str(eighteen_distance.days) + '日だよ。'
+    tweet = tweet + '20まであと' + str(twenty_distance.days) + '日だよ。'
 
     params = {"status" : tweet}
 
